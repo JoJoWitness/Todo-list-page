@@ -1,0 +1,200 @@
+html{
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+*{ box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: Roboto, sans-serif;
+    /* outline: 1px solid rebeccapurple; */
+}
+
+:root.dark{
+    --bar-color: #330A28;
+    --body-color: #11030D;
+    --outline-color:#23061B;
+    --text-color: #F3E2EF;
+    --selection-color:#991E79;
+    --alternate-color:#F3E2EF;
+
+}
+
+:root.light{
+    --bar-color: #F3E2EF;
+    --body-color: #FAF3F8;
+    --outline-color:#EED2E8;
+    --text-color: #330A28;
+    --selection-color:#661450;
+    --alternate-color:#330A28
+
+}
+
+#container{
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) 6fr;
+    grid-template-rows: minmax(100px, 1fr) 10fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+#headerTop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bar-color);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: center;
+    border-bottom: 2px solid var(--outline-color);
+    color: var(--text-color);
+    
+}
+
+#navBar{
+    display: grid;
+    grid-template-rows: 3fr 7fr 1fr;
+    background-color: var(--bar-color);
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    color: var(--text-color);
+}
+
+h1{
+    font-size: max(calc(37px + calc(1.6vw - 1.5em)),37px); 
+}
+
+ul{
+    list-style:none;
+}
+.mainButtonsContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    grid-row: 1 / 2;
+    font-size: max(calc(17px + calc(1.5vw - 1.5em)),17px);
+    
+}
+
+.mainButtons:first-child{
+    font-size: max(calc(19px + calc(1.5vw - 1em)),19px);
+}
+
+.mainButtonsContainer > ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:inherit;
+
+}
+
+.mainButtons{
+    display: flex;
+    width: 70%;
+    align-items: center;
+    margin-bottom: 10px;
+    height: 45px;
+    text-align: center;
+    border: 2px solid var(--bar-color) ;
+}
+
+.mainButtons:hover{
+    border-bottom: 2px solid #661450;
+}
+.mainButtons > img{
+    width: 36px;
+    margin-right: 10px;
+    padding: 2px;
+    background-color: #F3E2EF;
+    border-radius: 100%;
+}
+
+.projectContainer{
+    display: flex;
+    justify-content: center;
+    grid-row: 2 / 3;
+}
+
+h2{
+    font-size: max(calc(25px + calc(1.5vw - 1.5em)),25px);
+    font-weight: bold;
+}
+
+.projectContainer > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid var(--outline-color);
+    width: 80%;
+    height: 50px;
+    padding-top: 20px;
+    gap: 10px;
+}
+
+#addProject{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--alternate-color);
+    background-color: #F3E2EF;
+}
+
+#addImage{
+    width: 28px;
+    height: 28px;
+}
+
+#addProject:active{
+    scale: 0.85;
+}
+
+.themeButtonsContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.themeButtonsContainer > div{
+    display: flex;
+    border-top: 2px solid var(--outline-color);
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+form, input, fieldset{
+    border: 0px;
+}
+
+#themeButton{
+    height: max(50%, 32px);
+    width: max(80%, 100px);
+    border-radius: 15px;
+    background-color: var(--body-color);
+    border: 2px solid var(--outline-color);
+    text-align: center;
+    color: var(--text-color);
+    font-size: max(calc(17px + calc(1.5vw - 1.6em)),18px);
+    margin-top: 10px;
+  }
+
+#themeButton:active{
+  scale: 0.95;
+} 
+
+.toDoListContainer{
+    background-color: var(--body-color);
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    border-left: 2px solid var(--outline-color)
+}
+
+
+
+
