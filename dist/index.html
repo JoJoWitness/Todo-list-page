@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blank</title>
     <script src="main.js" defer></script>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cookie&family=Croissant+One&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,400;1,500;1,700&family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"> 
 </head>
 <body>
@@ -36,8 +35,12 @@
                         <h2>Projects</h2>
                         <div id="addProject"> <img id="addImage" src="../src/add2.svg"></div>
                     </div>
-                    <ul class="projectList"></ul>
-                        <li><img src="../src/book.svg">Ryuk a ryukryuk <button type="button"><img src="../src/close2.svg"></button></li>
+                    <ul class="projectList">
+                        <li><img src="../src/book.svg">Planificar Gatos</li>
+                        <li><img src="../src/book.svg">Estudiar</li>
+                        <li><img src="../src/book.svg">UNET</li>
+                        <li><img src="../src/book.svg">Steam & Steel</li>
+                    </ul>
                 </div>
                 <div class="themeButtonsContainer">
                     <div>
@@ -46,7 +49,27 @@
                 </div>
             </nav>
             <div class="toDoListContainer">
-
+                <div class="toDoListTask">
+                    <h3>Task</h3>
+                    <ol class="task">
+                        <li>
+                            <label class="container" for="task">
+                                <input type="checkbox" name="task" id="task">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="taskText">
+                                <p class="aboutTask">Pasear a Ryuk</p>
+                                <p class="date">1/7/22</p>
+                            </div>
+                            <div class="dropdown">
+                                <img src="../src/Menu.svg">
+                                <div class="dropdown-content">
+                                <a href="#">Edit</a>
+                                <a href="#">Remove</a>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </div> 
 
