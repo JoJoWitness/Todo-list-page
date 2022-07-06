@@ -10,11 +10,16 @@
 </head>
 <body>
         <div id="container">
+            
+
             <header id="headerTop">
                 <h1>To Do list</h1>
             </header>
             <nav id="navBar">
                 <div class="mainButtonsContainer">
+                    <div>
+                        <button class="buttonMainPage addTask">New Task</button>   
+                    </div>
                     <ul>
                         <li class="mainButtons">
                             <img src="../src/inbox.svg">
@@ -33,7 +38,7 @@
                 <div class="projectContainer">
                     <div>
                         <h2>Projects</h2>
-                        <div id="addProject"> <img id="addImage" src="../src/add2.svg"></div>
+                        <button type="button" id="addProject"> <img id="addImage" src="../src/add2.svg"></button>
                     </div>
                     <ul class="projectList">
                         <li><img src="../src/book.svg">Planificar Gatos</li>
@@ -44,7 +49,7 @@
                 </div>
                 <div class="themeButtonsContainer">
                     <div>
-                        <button type="button" id="themeButton">Change theme</button>
+                        <button type="button" class="buttonMainPage" id="themeButton">Change theme</button>
                     </div>
                 </div>
             </nav>
@@ -68,14 +73,94 @@
                                 <a href="#">Remove</a>
                             </div>
                         </li>
+                        
                     </ol>
                 </div>
             </div>
         </div> 
 
+
+
 </body>
-<footer>
+<footer><div class="justPlaceHolder">
+    <div class="projectWindow">
+       <form>
+           <fieldset>
+                <div class="inputContainer projectForm">
+                    <label for="projectName">Project:</label>
+                    <input type="text" id="projectName" name="projectName" maxlength="50">
+                </div>
+            </fieldset>
+            <div class="formButtons projectButtons">
+                <button type="button" class="bottomButtons" id="Cancel" >Cancel</button>
+                <button type="submit" class="bottomButtons" id="submit" >Submit</button>
+            </div>
+       </form> 
+    </div>
+</div>
 
 </footer>
 </html>
 
+ <!-- <div class="justPlaceHolder">
+                <div class="formWindow">
+                    <form>
+                        <fieldset class="topForm">
+                            <div class="inputContainer">
+                                <label for="taskName">Task:</label>
+                                <input type="text" id="taskName" name="taskName" maxlength="100">
+                            </div>
+                            <div class="inputContainer">
+                                <label for="taskDescription">Description:</label>
+                                <input type="text" id="taskDescription" name="taskDescription" maxlength="200">
+                            </div>
+                        </fieldset>
+                        <fieldset class="bottomForm">
+                            <div class="dateContainer">
+                                <label for="taskDate">Date:</label>
+                                <input type="date" id="taskDate" name="taskDate">
+                            </div>
+                                <div class="priorityButtons">
+                                    <div>
+                                        Task Priority
+                                    </div>
+                                    <div>
+                                        <label class="container rContainer" for="low"> Low
+                                            <input type="radio" name="taskP" id="low">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container rContainer" for="medium"> Medium
+                                            <input type="radio" name="taskP" id="medium">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container rContainer" for="high"> High
+                                            <input type="radio" name="taskP" id="high">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                        </fieldset>
+                        <div class="formButtons">
+                            <button type="button" class="bottomButtons" id="Cancel" >Cancel</button>
+                            <button type="submit" class="bottomButtons" id="submit" >Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div> -->
+
+            <!-- <div class="justPlaceHolder">
+                <div class="projectWindow">
+                   <form>
+                       <fieldset>
+                            <div class="inputContainer projectForm">
+                                <label for="projectName">Project:</label>
+                                <input type="text" id="projectName" name="projectName" maxlength="50">
+                            </div>
+                        </fieldset>
+                        <div class="formButtons projectButtons">
+                            <button type="button" class="bottomButtons" id="Cancel" >Cancel</button>
+                            <button type="submit" class="bottomButtons" id="submit" >Submit</button>
+                        </div>
+                   </form> 
+                </div>
+            </div> -->
