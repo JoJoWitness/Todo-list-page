@@ -21,6 +21,7 @@ html{
     --alternate-color:#F3E2EF;
     --checked-color: #340928;
     --textOn-color: #E1B7D7;
+    --filter-color:  invert(82%) sepia(9%) saturate(535%) hue-rotate(291deg) brightness(116%) contrast(91%);;
 
 }
 
@@ -33,7 +34,7 @@ html{
     --alternate-color:#330A28;
     --checked-color: #F3E2EF;
     --textOn-color: #661450;
-
+    --filter-color: invert(9%) sepia(44%) saturate(2345%) hue-rotate(284deg) brightness(83%) contrast(103%);
 }
 
 #container{
@@ -178,7 +179,7 @@ h2{
     height: 30px;
     border-radius: 50%;
     border: 2px solid var(--alternate-color);
-    background-color: #F3E2EF;
+    background-color: var(--bar-color);
 }
 
 #addImage{
@@ -532,4 +533,12 @@ form > div{
 .projectForm > input {
     width: 90%;
     font-size: 18px;
+}
+
+img{
+   filter: var(--filter-color);
+}
+
+.aboutTask, .date, .taskText{
+    color: inherit;
 }
