@@ -14,5 +14,14 @@ function deleteTask(e){
     e.currentTarget.parentElement.parentElement.parentElement.remove()
 }
     
+function editTask(e){ 
+    let objectName = e.currentTarget.parentElement.parentElement.parentElement.className
+    let objectToEdit = localStorage.getItem(objectName)
+    let parsedObject = JSON.parse(objectToEdit)
+    console.log(objectName)
+    console.log(parsedObject)
+    parsedObject.name = 'gatoW'
+    console.log(parsedObject)
+}
+export {crossOutTask, deleteTask, editTask}
 
-export {crossOutTask, deleteTask}

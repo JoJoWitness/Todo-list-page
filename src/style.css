@@ -15,7 +15,7 @@ html{
 :root.dark{
     --bar-color: #330A28;
     --body-color: #23061B;
-    --outline-color:#340928;
+    --outline-color:#450C35;
     --text-color: #F3E2EF;
     --selection-color:#551143;
     --alternate-color:#F3E2EF;
@@ -206,7 +206,7 @@ h2{
     padding-right: 7px;
 }
 
-.projectList > li >img{
+.projectList > li > img{
     width: 30px;
     height: 30px;
     margin-right: 10px;
@@ -264,11 +264,13 @@ h3{
     padding-left: 5px;
 }
 
-.task > li{
+.task > li > div{
     display: flex;
     align-items: center;
     padding-left: 15px;
 }
+
+
 
 .container {
     display: flex;
