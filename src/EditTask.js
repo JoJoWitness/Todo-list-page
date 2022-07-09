@@ -1,4 +1,5 @@
-
+import {showTaskEditorPopUp, deleteChild} from './ShowPopUp'
+import {getEditedTask} from './ElementCreation'
 function crossOutTask(e){ 
     if( e.currentTarget.checked === false){
         e.currentTarget.parentElement.parentElement.removeAttribute('style', ' text-decoration: line-through; color: var(--textOn-color);')
@@ -11,17 +12,54 @@ function crossOutTask(e){
     }
 }
 function deleteTask(e){ 
-    e.currentTarget.parentElement.parentElement.parentElement.remove()
+    e.currentTarget.parentElement.parentElement.parentElement.parentElement.remove()
 }
     
-function editTask(e){ 
-    let objectName = e.currentTarget.parentElement.parentElement.parentElement.className
+function getValuesToEdit(e){ 
+    let objectName = e.currentTarget.parentElement.parentElement.parentElement.parentElement.className
     let objectToEdit = localStorage.getItem(objectName)
     let parsedObject = JSON.parse(objectToEdit)
-    console.log(objectName)
-    console.log(parsedObject)
-    parsedObject.name = 'gatoW'
-    console.log(parsedObject)
-}
-export {crossOutTask, deleteTask, editTask}
+    
+    let currentName = parsedObject.name
+    let currentId = parsedObject.id
+    let currentDescription = parsedObject.description
+    let currentDate = parsedObject.date 
+    
+    console.log(currentName)
 
+    showTaskEditorPopUp(currentName, currentDescription, currentDate, currentId)
+
+    
+}
+
+function editTask(e){ 
+    let objectName = e.currentTarget.className
+    let objectToEdit = localStorage.getItem(objectName)
+    let parsedObject = JSON.parse(objectToEdit)
+
+    console.log(parsedObject.id);
+    
+    parsedObject.name = document.querySelector('#taskName').value;
+    parsedObject.description = document.querySelector('#taskDescription').value
+    parsedObject.date = document.querySelector('#taskDate').value
+    parsedObject.priority = document.querySelector('input[name="taskP"]:checked').value;
+
+    console.log(parsedObject.name)
+    console.log(parsedObject.description)
+    console.log(parsedObject.date)
+    console.log(parsedObject.priority)
+
+    localStorage.setItem(`${parsedObject.id}`,JSON.stringify(parsedObject))
+
+    deleteChild()
+    deleteTaskAfterEdit(parsedObject.id)
+    getEditedTask(parsedObject.name, parsedObject.description, parsedObject.date, parsedObject.priority, parsedObject.id)
+}
+
+function deleteTaskAfterEdit(id){
+    let editedTask = document.querySelector(`.${id}`);
+    console.log(editedTask)
+    editedTask.remove();
+}
+
+export {crossOutTask, deleteTask, getValuesToEdit, editTask}

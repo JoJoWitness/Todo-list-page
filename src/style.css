@@ -448,6 +448,16 @@ form{
    
 }
 
+.formButtonsEdit > button{
+    height: 37px;
+    width: max(13%, 100px);
+    border-radius: 10px;
+    background-color: var(--bar-color);
+    border: 2px solid var(--selection-color);
+    text-align: center;
+    font-size: 20px;
+}
+
 .bottomForm{
     display: flex;
     flex-direction: row;
