@@ -12,6 +12,8 @@ function crossOutTask(e){
     }
 }
 function deleteTask(e){ 
+    let objectName = e.currentTarget.parentElement.parentElement.parentElement.parentElement.className
+    localStorage.removeItem(objectName)
     e.currentTarget.parentElement.parentElement.parentElement.parentElement.remove()
 }
     
@@ -25,8 +27,6 @@ function getValuesToEdit(e){
     let currentDescription = parsedObject.description
     let currentDate = parsedObject.date 
     
-    console.log(currentName)
-
     showTaskEditorPopUp(currentName, currentDescription, currentDate, currentId)
 
     
@@ -37,17 +37,11 @@ function editTask(e){
     let objectToEdit = localStorage.getItem(objectName)
     let parsedObject = JSON.parse(objectToEdit)
 
-    console.log(parsedObject.id);
     
     parsedObject.name = document.querySelector('#taskName').value;
     parsedObject.description = document.querySelector('#taskDescription').value
     parsedObject.date = document.querySelector('#taskDate').value
     parsedObject.priority = document.querySelector('input[name="taskP"]:checked').value;
-
-    console.log(parsedObject.name)
-    console.log(parsedObject.description)
-    console.log(parsedObject.date)
-    console.log(parsedObject.priority)
 
     localStorage.setItem(`${parsedObject.id}`,JSON.stringify(parsedObject))
 
@@ -57,8 +51,7 @@ function editTask(e){
 }
 
 function deleteTaskAfterEdit(id){
-    let editedTask = document.querySelector(`.${id}`);
-    console.log(editedTask)
+    let editedTask = document.querySelector(`[data-id='${id}']`);
     editedTask.remove();
 }
 
