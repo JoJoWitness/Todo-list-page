@@ -60,10 +60,11 @@ html{
 
 #navBar{
     display: grid;
-    grid-template-rows: 4fr 7fr 1fr;
+    grid-template-rows: 4fr minmax(450px, 7fr) 1fr;
     background-color: var(--bar-color);
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    width: 100%;
 
 }
 
@@ -154,8 +155,8 @@ ul, ol{
     flex-direction: column;
     align-items: center;
     grid-row: 2 / 3;
-
-}
+    width: 100%;
+} 
 
 .projectContainer > div{
     display: flex;
@@ -194,10 +195,22 @@ h2{
 }
 
 .projectList{
+    margin-left: 5px;
+    align-self: flex-start;
     margin-top: 15px;
     list-style: none;
-    font-size: max(calc(19px + calc(1.5vw - 1.6em)),18px);
+    font-size: max(calc(17px + calc(1.5vw - 1.6em)),17px);
     cursor: pointer;
+    max-height: 400px;
+    overflow-y: scroll;
+    width: 100%;
+    padding: 3px;
+    height: auto;
+}
+
+.projectList::-webkit-scrollbar{
+    position: absolute;
+    left: 0px;
 }
 
 .projectList > li{
@@ -307,13 +320,14 @@ h3{
     background-color: var(--checked-color);
   }
   
-  .container input:checked ~ .checkmark {
-    background-color: var(--selection-color);
-  }
   
   .checkmark:after {
     content: "";
     display: none;
+  }
+
+  .container input:checked ~ .checkmark {
+    background-color: var(--selection-color);
   }
   
   .container input:checked ~ .checkmark:after {

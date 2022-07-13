@@ -1,3 +1,5 @@
+import {isToday, format} from 'date-fns'
+
 function addTagger(){
     const buttons = document.querySelectorAll('.buttons')
     buttons.forEach(buttons => buttons.addEventListener('click',(e) =>{
@@ -27,10 +29,10 @@ function selectButtons(){
             tagAsSelected(inbox)
             showInbox(inboxName)})
              
-
-  
-    // const today = document.querySelector('.today-js')
-    // const upcoming = document.querySelector('.upcoming-js')
+    const today = document.querySelector('.today-js')
+    today.addEventListener('click', showToday)
+    // const week = document.querySelector('.week-js')
+    // week.addEventListener('click', showWeek)
 
     addTagger()
 }
@@ -50,6 +52,21 @@ function showProject(projectName){
   let taskToShow = document.querySelectorAll(`[data-belongto='${projectName}']`)
   console.log(projectName)
   taskToShow.forEach(taskToShow => taskToShow.setAttribute('style','display: block;'))
+}
+
+function showToday(){
+  let task = document.querySelectorAll('.date')
+  let today = Date.now()
+  today = format(new Date(today), 'dd-MM-yyyy')
+
+  task.forEach((task) =>{
+    let date = task.textContent
+    if(today == date){
+      task.parentElement.parentElement.parentElement.setAttribute('style','display: block;')
+    } else{
+      task.parentElement.parentElement.parentElement.setAttribute('style','display: none;')
+    }
+  })
 }
 
 export default  selectButtons

@@ -3,6 +3,8 @@ import {crossOutTask, deleteTask, getValuesToEdit} from "./EditTask"
 import Book from "./images/book.svg"
 import Menu from "./images/Menu.svg"
 import {addTagger, showProject} from "./ProjectSelector"
+import { format} from 'date-fns'
+
 
 
 
@@ -100,7 +102,9 @@ function getTask(){
         let id = loadId()
         console.log('pony', id)
         let description = document.querySelector('#taskDescription').value
-        let date = document.querySelector('#taskDate').value
+        let dateToconvert = document.querySelector('#taskDate').value
+        console.log(dateToconvert)
+        let date = format(new Date(dateToconvert), 'dd-MM-yyyy')
         let priority = document.querySelector('input[name="taskP"]:checked').value;
         let belongTo = document.querySelector('.projectName-js').textContent
         const taskElement = new Task(name, description, date, priority, id, belongTo) 
