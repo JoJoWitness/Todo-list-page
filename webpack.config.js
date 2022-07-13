@@ -11,21 +11,19 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-       use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader, 
-                        options: {
-                            publicPath: ''
-                        }
-                    },
-                    {
-                        loader: "css-loader"
-                    }
-                ]
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        use: {
+          loader: 'file-loader',
+          options: {
+              name: "[name].[ext]",
+              outputPath: "imgs",
+              publicPath: 'imgs',
+          }
+      }
       },
       {
         test: /\.m?js$/,
