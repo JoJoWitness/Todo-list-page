@@ -5,7 +5,6 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '',
   },
   
   module: {
@@ -13,6 +12,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+        output: publicPath: '',
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
