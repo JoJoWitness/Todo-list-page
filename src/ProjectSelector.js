@@ -1,4 +1,4 @@
-import {isToday, format} from 'date-fns'
+import {format} from 'date-fns'
 
 function addTagger(){
     const buttons = document.querySelectorAll('.buttons')
@@ -31,8 +31,9 @@ function selectButtons(){
              
     const today = document.querySelector('.today-js')
     today.addEventListener('click', showToday)
-    // const week = document.querySelector('.week-js')
-    // week.addEventListener('click', showWeek)
+    
+    const upcoming = document.querySelector('.upcoming-js')
+    upcoming.addEventListener('click', showUpcoming)
 
     addTagger()
 }
@@ -65,6 +66,21 @@ function showToday(){
       task.parentElement.parentElement.parentElement.setAttribute('style','display: block;')
     } else{
       task.parentElement.parentElement.parentElement.setAttribute('style','display: none;')
+    }
+  })
+}
+
+function showUpcoming(){
+  let task = document.querySelectorAll('.date')
+  let today = Date.now()
+  today = format(new Date(today), 'dd-MM-yyyy')
+
+  task.forEach((task) =>{
+    let date = task.textContent
+    if(today == date){
+      task.parentElement.parentElement.parentElement.setAttribute('style','display: none;')
+    } else{
+      task.parentElement.parentElement.parentElement.setAttribute('style','display: block;')
     }
   })
 }

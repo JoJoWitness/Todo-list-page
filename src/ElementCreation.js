@@ -60,13 +60,11 @@ function renderTask(name, description, date, priority, id, belongTo) {
          imgDd.src = Menu;
          const divDdII = document.createElement('div');
          divDdII.setAttribute('class','dropdown-content')
-         const aI = document.createElement('a');
-         aI.setAttribute('href','#')
+         const aI = document.createElement('a')
          aI.setAttribute('class',id)
          aI.textContent = 'Edit';
          aI.addEventListener('click', getValuesToEdit)
          const aII= document.createElement('a');
-         aII.setAttribute('href','#')
          aII.textContent = 'Remove';
          aII.addEventListener('click', deleteTask)
          

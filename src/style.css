@@ -208,7 +208,9 @@ h2{
     height: auto;
 }
 
-.projectList::-webkit-scrollbar{
+
+
+.projectList::-webkit-scrollbar, .task::-webkit-scrollbar{
     position: absolute;
     left: 0px;
 }
@@ -283,6 +285,10 @@ h3{
     display: flex;
     align-items: center;
     padding-left: 15px;
+}
+
+.task{
+overflow-y: scroll;
 }
 
 
@@ -571,3 +577,4 @@ img{
 .aboutTask, .date, .taskText{
     color: inherit;
 }
+
