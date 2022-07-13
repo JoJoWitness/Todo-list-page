@@ -13,6 +13,7 @@ function crossOutTask(e){
 }
 function deleteTask(e){ 
     let objectName = e.currentTarget.parentElement.parentElement.parentElement.parentElement.className
+    console.log(e.currentTarget.parentElement.parentElement.parentElement.parentElement.className)
     localStorage.removeItem(objectName)
     e.currentTarget.parentElement.parentElement.parentElement.parentElement.remove()
 }
@@ -43,7 +44,7 @@ function editTask(e){
     parsedObject.date = document.querySelector('#taskDate').value
     parsedObject.priority = document.querySelector('input[name="taskP"]:checked').value;
 
-    localStorage.setItem(`${parsedObject.id}`,JSON.stringify(parsedObject))
+    localStorage.setItem(parsedObject.id,JSON.stringify(parsedObject))
 
     deleteChild()
     deleteTaskAfterEdit(parsedObject.id)
@@ -51,7 +52,7 @@ function editTask(e){
 }
 
 function deleteTaskAfterEdit(id){
-    let editedTask = document.querySelector(`[data-id='${id}']`);
+    let editedTask = document.querySelector(`[data-task='${id}']`);
     editedTask.remove();
 }
 

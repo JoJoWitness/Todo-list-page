@@ -124,7 +124,7 @@ ul, ol{
 
 }
 
-.mainButtons{
+.buttons{
     display: flex;
     width: 90%;
     align-items: center;
@@ -135,12 +135,14 @@ ul, ol{
     cursor: pointer;
 }
 
-.mainButtons:hover, .projectList > li:hover{
+.buttons:hover, .projectList > li:hover, .selectedButton{
     background-color: var(--selection-color);
     border-radius: 15px;
     cursor: pointer;
 }
-.mainButtons > img{
+
+
+.buttons > img{
     width: 36px;
     margin-right: 10px;
     padding: 2px;
