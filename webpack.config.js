@@ -47,9 +47,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            options: {
-              publicPath: '/public/path/to/',
-            },
             presets: [
               ['@babel/preset-env', { targets: "defaults" }]
             ]
