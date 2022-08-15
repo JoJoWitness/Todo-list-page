@@ -225,4 +225,3 @@ function loadId(){
       
 export default loadStorage 
 export {getTask, getProject, getEditedTask}
-

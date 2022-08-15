@@ -1,5 +1,6 @@
 import {showTaskEditorPopUp, deleteChild} from './ShowPopUp'
 import {getEditedTask} from './ElementCreation'
+
 function crossOutTask(e){ 
     if( e.currentTarget.checked === false){
         // e.currentTarget.parentElement.parentElement.removeAttribute('style', ' text-decoration: line-through; color: var(--textOn-color);')
